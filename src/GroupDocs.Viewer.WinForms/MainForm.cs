@@ -1,4 +1,6 @@
-﻿using GroupDocs.Viewer.Options;
+﻿using GroupDocs.Viewer.Exceptions;
+using GroupDocs.Viewer.Options;
+using GroupsDocs.Viewer.Forms.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +24,7 @@ namespace GroupDocs.Viewer.Forms.UI
 
         private int CurrentPage { get; set; } = 1;
 
-        const string GeneralTitle = "Viewer for .NET Win Forms";
+        const string GeneralTitle = "Viewer for .NET Windows Forms";
 
         public MainForm()
         {
@@ -73,7 +75,7 @@ namespace GroupDocs.Viewer.Forms.UI
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.InitialDirectory = "c:\\examples";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -99,7 +101,36 @@ namespace GroupDocs.Viewer.Forms.UI
 
                     Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath);
                     GroupDocs.Viewer.Options.ViewInfoOptions viewInfo = GroupDocs.Viewer.Options.ViewInfoOptions.ForHtmlView();
-                    ViewInfo = Viewer.GetViewInfo(viewInfo);
+
+                    try
+                    {
+                        ViewInfo = Viewer.GetViewInfo(viewInfo);
+                    }
+                    catch (PasswordRequiredException)
+                    {
+                        // Ask for password
+                        EnterPasswordBox enterPasswordbox = new EnterPasswordBox();
+                        DialogResult res = enterPasswordbox.ShowDialog();
+
+                        if (res == DialogResult.OK)
+                        {
+                            Viewer.Dispose();
+                            ViewInfo = null;
+
+                            LoadOptions loadOptions = new LoadOptions();
+                            loadOptions.Password = enterPasswordbox.ResultValue;
+
+                            Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath, loadOptions);
+                            ViewInfo = Viewer.GetViewInfo(viewInfo);
+                        }
+                        else
+                        {
+                            ViewInfo = null;
+                            webBrowerMain.DocumentText = string.Empty;
+
+                            throw;
+                        }
+                    }
 
                     ViewFile(Viewer);
                     openFileBtn.Enabled = true;
@@ -125,7 +156,7 @@ namespace GroupDocs.Viewer.Forms.UI
                 viewer.View(htmlViewOptions, page);
 
                 string curDir = Directory.GetCurrentDirectory();
-                this.webBrowser1.Url = new Uri(String.Format("file:///{0}/temp.html", curDir));
+                this.webBrowerMain.Url = new Uri(String.Format("file:///{0}/temp.html", curDir));
             }
 
             UpdateControlsVisibility();

@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webBrowerMain = new System.Windows.Forms.WebBrowser();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.openFileBtn = new System.Windows.Forms.ToolStripButton();
             this.firstPageBtn = new System.Windows.Forms.ToolStripButton();
             this.prevPageBtn = new System.Windows.Forms.ToolStripButton();
+            this.pagesStatusLabel = new System.Windows.Forms.ToolStripLabel();
             this.nextPageBtn = new System.Windows.Forms.ToolStripButton();
             this.lastPageBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.licenseStatusLabel = new System.Windows.Forms.ToolStripLabel();
-            this.pagesStatusLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // webBrowerMain
             // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.webBrowerMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(-8, 42);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(3, 39, 3, 3);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 39);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(831, 664);
-            this.webBrowser1.TabIndex = 0;
+            this.webBrowerMain.Location = new System.Drawing.Point(-8, 42);
+            this.webBrowerMain.Margin = new System.Windows.Forms.Padding(3, 39, 3, 3);
+            this.webBrowerMain.MinimumSize = new System.Drawing.Size(20, 39);
+            this.webBrowerMain.Name = "webBrowerMain";
+            this.webBrowerMain.Size = new System.Drawing.Size(831, 664);
+            this.webBrowerMain.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -106,6 +106,12 @@
             this.prevPageBtn.Text = "toolStripButton3";
             this.prevPageBtn.Click += new System.EventHandler(this.prevPageBtn_Click);
             // 
+            // pagesStatusLabel
+            // 
+            this.pagesStatusLabel.Name = "pagesStatusLabel";
+            this.pagesStatusLabel.Size = new System.Drawing.Size(22, 36);
+            this.pagesStatusLabel.Text = "     ";
+            // 
             // nextPageBtn
             // 
             this.nextPageBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -143,19 +149,13 @@
             this.licenseStatusLabel.Size = new System.Drawing.Size(73, 36);
             this.licenseStatusLabel.Text = "Not licensed";
             // 
-            // pagesStatusLabel
-            // 
-            this.pagesStatusLabel.Name = "pagesStatusLabel";
-            this.pagesStatusLabel.Size = new System.Drawing.Size(22, 36);
-            this.pagesStatusLabel.Text = "     ";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 705);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.webBrowerMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(839, 744);
             this.Name = "MainForm";
@@ -171,7 +171,7 @@
 
         #endregion
 
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowerMain;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton openFileBtn;
         private System.Windows.Forms.ToolStripButton firstPageBtn;
