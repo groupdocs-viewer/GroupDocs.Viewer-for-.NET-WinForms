@@ -235,22 +235,5 @@ namespace GroupDocs.Viewer.Forms.UI
                 Viewer.Dispose();
             }
         }
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            //Control control = (Control)sender;
-
-            //// Ensure the Form remains square (Height = Width).
-            //if (control.Size.Height != control.Size.Width)
-            //{
-            //    // Resize web browser size automatically
-            //    webBrowser1.Size = new System.Drawing.Size(control.Size.Width - 50, control.Size.Height - 170);
-
-            //    //// Position other controls on resize
-            //    //firstPageBtn.Top = prevPageBtn.Top = nextPageBtn.Top = lastPageBtn.Top = openFileBtn.Top = webBrowser1.Bottom + 20;
-            //    //PagesLabel.Top = PagesInfoLabel.Top = firstPageBtn.Top + 30;
-            //    //licenseStatusLabel.Top = licenseStatusTextLabel.Top = PagesLabel.Top + 15;
-            //}
-        }
     }
 }
