@@ -83,7 +83,7 @@
             this.openFileBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openFileBtn.Name = "openFileBtn";
             this.openFileBtn.Size = new System.Drawing.Size(36, 36);
-            this.openFileBtn.Text = "toolStripButton1";
+            this.openFileBtn.Text = "Open file";
             this.openFileBtn.Click += new System.EventHandler(this.openFileBtn_Click);
             // 
             // firstPageBtn
@@ -93,7 +93,7 @@
             this.firstPageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.firstPageBtn.Name = "firstPageBtn";
             this.firstPageBtn.Size = new System.Drawing.Size(36, 36);
-            this.firstPageBtn.Text = "toolStripButton2";
+            this.firstPageBtn.Text = "First page";
             this.firstPageBtn.Click += new System.EventHandler(this.firstPageBtn_Click);
             // 
             // prevPageBtn
@@ -103,7 +103,7 @@
             this.prevPageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.prevPageBtn.Name = "prevPageBtn";
             this.prevPageBtn.Size = new System.Drawing.Size(36, 36);
-            this.prevPageBtn.Text = "toolStripButton3";
+            this.prevPageBtn.Text = "Previous page";
             this.prevPageBtn.Click += new System.EventHandler(this.prevPageBtn_Click);
             // 
             // pagesStatusLabel
@@ -119,7 +119,7 @@
             this.nextPageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.nextPageBtn.Name = "nextPageBtn";
             this.nextPageBtn.Size = new System.Drawing.Size(36, 36);
-            this.nextPageBtn.Text = "toolStripButton4";
+            this.nextPageBtn.Text = "Next page";
             this.nextPageBtn.Click += new System.EventHandler(this.nextPageBtn_Click);
             // 
             // lastPageBtn
@@ -129,7 +129,7 @@
             this.lastPageBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.lastPageBtn.Name = "lastPageBtn";
             this.lastPageBtn.Size = new System.Drawing.Size(36, 36);
-            this.lastPageBtn.Text = "toolStripButton5";
+            this.lastPageBtn.Text = "Last page";
             this.lastPageBtn.Click += new System.EventHandler(this.lastPageBtn_Click);
             // 
             // toolStripSeparator1
