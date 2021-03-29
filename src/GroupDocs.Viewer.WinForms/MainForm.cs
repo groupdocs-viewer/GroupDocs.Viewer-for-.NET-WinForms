@@ -20,7 +20,7 @@ namespace GroupDocs.Viewer.Forms.UI
 
         private int CurrentPage { get; set; } = 1;
 
-        const string GeneralTitle = "Viewer for .NET Windows Forms";
+        const string GeneralTitle = "Viewer for .NET  Windows Forms";
 
         public MainForm()
         {
@@ -98,65 +98,71 @@ namespace GroupDocs.Viewer.Forms.UI
                 }
             }
 
-            if (Viewer != null)
+            // If file set - process it.
+            if (!string.IsNullOrEmpty(CurrentFilePath))
             {
-                Viewer.Dispose();
-                ViewInfo = null;
-                CurrentPage = 1;
-                DisplayViewInfo();
-            }
 
-            new Thread(() =>
-            {
-                try
+                if (Viewer != null)
                 {
-                    SetPagesInfoText($"Loading {Path.GetFileName(CurrentFilePath)}");
+                    Viewer.Dispose();
+                    ViewInfo = null;
+                    CurrentPage = 1;
+                    DisplayViewInfo();
+                }
 
-                    Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath);
-                    GroupDocs.Viewer.Options.ViewInfoOptions viewInfo = GroupDocs.Viewer.Options.ViewInfoOptions.ForHtmlView();
-
+                new Thread(() =>
+                {
                     try
                     {
-                        ViewInfo = Viewer.GetViewInfo(viewInfo);
-                    }
-                    catch (PasswordRequiredException)
-                    {
-                        // Ask for password
-                        EnterPasswordBox enterPasswordbox = new EnterPasswordBox();
-                        DialogResult res = enterPasswordbox.ShowDialog();
+                        SetPagesInfoText($"Loading {Path.GetFileName(CurrentFilePath)}");
 
-                        if (res == DialogResult.OK)
+                        Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath);
+                        GroupDocs.Viewer.Options.ViewInfoOptions viewInfo = GroupDocs.Viewer.Options.ViewInfoOptions.ForHtmlView();
+
+                        try
                         {
-                            Viewer.Dispose();
-                            ViewInfo = null;
-
-                            LoadOptions loadOptions = new LoadOptions();
-                            loadOptions.Password = enterPasswordbox.ResultValue;
-
-                            Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath, loadOptions);
                             ViewInfo = Viewer.GetViewInfo(viewInfo);
                         }
-                        else
+                        catch (PasswordRequiredException)
                         {
-                            ViewInfo = null;
-                            webBrowerMain.DocumentText = string.Empty;
+                        // Ask for password
+                        EnterPasswordBox enterPasswordbox = new EnterPasswordBox();
+                            DialogResult res = enterPasswordbox.ShowDialog();
 
-                            throw;
+                            if (res == DialogResult.OK)
+                            {
+                                Viewer.Dispose();
+                                ViewInfo = null;
+
+                                LoadOptions loadOptions = new LoadOptions();
+                                loadOptions.Password = enterPasswordbox.ResultValue;
+
+                                Viewer = new GroupDocs.Viewer.Viewer(CurrentFilePath, loadOptions);
+                                ViewInfo = Viewer.GetViewInfo(viewInfo);
+                            }
+                            else
+                            {
+                                ViewInfo = null;
+                                CurrentFilePath = null;
+                                webBrowerMain.DocumentText = string.Empty;
+                                DisplayViewInfo();
+
+                                throw;
+                            }
                         }
+
+                        ViewFile(Viewer);
+                        openFileBtn.Enabled = true;
                     }
-
-                    ViewFile(Viewer);
-                    openFileBtn.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error occured! {ex.Message}");
-                    ViewInfo = null;
-                    DisplayViewInfo();
-                    openFileBtn.Enabled = true;
-                }
-            }).Start();
-
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error occured! {ex.Message}");
+                        ViewInfo = null;
+                        DisplayViewInfo();
+                        openFileBtn.Enabled = true;
+                    }
+                }).Start();
+            }
         }
 
         /// <summary>
