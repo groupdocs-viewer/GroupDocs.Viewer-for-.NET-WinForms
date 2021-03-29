@@ -94,7 +94,7 @@
             this.firstPageBtn.Name = "firstPageBtn";
             this.firstPageBtn.Size = new System.Drawing.Size(36, 36);
             this.firstPageBtn.Text = "First page";
-            this.firstPageBtn.Click += new System.EventHandler(this.firstPageBtn_Click);
+            this.firstPageBtn.Click += new System.EventHandler(this.FirstPageBtn_Click);
             // 
             // prevPageBtn
             // 
@@ -104,7 +104,7 @@
             this.prevPageBtn.Name = "prevPageBtn";
             this.prevPageBtn.Size = new System.Drawing.Size(36, 36);
             this.prevPageBtn.Text = "Previous page";
-            this.prevPageBtn.Click += new System.EventHandler(this.prevPageBtn_Click);
+            this.prevPageBtn.Click += new System.EventHandler(this.PrevPageBtn_Click);
             // 
             // pagesStatusLabel
             // 
@@ -120,7 +120,7 @@
             this.nextPageBtn.Name = "nextPageBtn";
             this.nextPageBtn.Size = new System.Drawing.Size(36, 36);
             this.nextPageBtn.Text = "Next page";
-            this.nextPageBtn.Click += new System.EventHandler(this.nextPageBtn_Click);
+            this.nextPageBtn.Click += new System.EventHandler(this.NextPageBtn_Click);
             // 
             // lastPageBtn
             // 
@@ -130,7 +130,7 @@
             this.lastPageBtn.Name = "lastPageBtn";
             this.lastPageBtn.Size = new System.Drawing.Size(36, 36);
             this.lastPageBtn.Text = "Last page";
-            this.lastPageBtn.Click += new System.EventHandler(this.lastPageBtn_Click);
+            this.lastPageBtn.Click += new System.EventHandler(this.LastPageBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -159,7 +159,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(839, 744);
             this.Name = "MainForm";
-            this.Text = "Viewer for .NET Win Forms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Viewer for .NET Windows Forms";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

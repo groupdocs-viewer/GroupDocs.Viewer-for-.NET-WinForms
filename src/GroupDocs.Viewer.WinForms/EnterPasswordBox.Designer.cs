@@ -85,6 +85,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(359, 137);
             this.Name = "EnterPasswordBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Password required!";
             this.Shown += new System.EventHandler(this.EnterPasswordBox_Shown);
             this.ResumeLayout(false);
