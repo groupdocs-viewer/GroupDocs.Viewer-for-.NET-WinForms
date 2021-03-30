@@ -40,7 +40,7 @@ In order to demonstrate GroupDocs.Viewer for .NET reach and powerful features we
 **Archive:** TAR, ZIP, BZ2, RAR\
 **Email:** EML, EMLX, MSG, OST, PST, NSF\
 **Metafile:** CGM, EMF, EMZ, WMF, WMZ\
-**Other:** IFC, STL, PS, TEX, SXC, DJVU, DNG, DIB, EPS, HPG, PLT, IGS, CF2, OBJ, CHM, CSV, TSV, VCF                                                                                                      | 
+**Other:** IFC, STL, PS, TEX, SXC, DJVU, DNG, DIB, EPS, HPG, PLT, IGS, CF2, OBJ, CHM, CSV, TSV, VCF                                                                             
 
 ## Demo Video
 
