@@ -18,6 +18,8 @@ In order to demonstrate GroupDocs.Viewer for .NET reach and powerful features we
 
 **Note:** without a license application will run in trial mode, purchase [GroupDocs.Viewer for .NET license](https://purchase.groupdocs.com/order-online-step-1-of-8.aspx) or request [GroupDocs.Viewer for .NET temporary license](https://purchase.groupdocs.com/temporary-license).
 
+## Supported document Formats
+
 | Family                      | Formats                                                                                                                            |
 | --------------------------- |:---------------------------------------------------------------------------------------------------------------------------------- |
 | Archive formats             | `ZIP`, `TAR`, `BZ2`, `RAR`, `GZIP`                                                                                                 |
