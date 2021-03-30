@@ -49,8 +49,6 @@ In order to demonstrate GroupDocs.Viewer for .NET reach and powerful features we
 </p>
 
 ## Features
-- Clean, modern and intuitive design
-- Responsive design
 - Open password protected documents
 - Support over 170+ documents and image formats including Word, Excel, PowerPoint 
 - Smooth page navigation
