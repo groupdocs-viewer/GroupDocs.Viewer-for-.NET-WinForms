@@ -23,16 +23,16 @@ In order to demonstrate GroupDocs.Viewer for .NET reach and powerful features we
 | Archive formats             | `ZIP`, `TAR`, `BZ2`, `RAR`, `GZIP`                                                                                                 |
 | Apple formats               | `Numbers` 																														   |
 | PDF formats                 | `PDF`, `XPS`, `OXPS`, `TEX`                                                                                                        |
-| CAD formats                 | `DXF`, `DWG` , `DWT`, `STL`, `IFC`,`DWF` , `DWFX`, `DGN`, `PLT`,`CF2`,`OBJ`, `HPG`, 'IGS'                                          |
+| CAD formats                 | `DXF`, `DWG` , `DWT`, `STL`, `IFC`,`DWF` , `DWFX`, `DGN`, `PLT`,`CF2`,`OBJ`, `HPG`, `IGS`                                          |
 | Microsoft Word              | `DOC`, `DOCM` , `DOCX`, `DOT`, `DOTM`, `DOTX`,`RTF`                                                                                      |
 | Microsoft Excel             | `XLS`, `XLSB`, `XLSM`, `XLSX`, `XLT`, `XLTM`, `XLTX`,`Excel 2003 XML`,`XLAM`                                                       |
 | Microsoft PowerPoint        | `PPT`, `POT`, `POTM`, `POTX`, `PPS`, `PPSM`, `PPSX`, `PPTM`, `PPTX`                                                                |
 | Microsoft Visio             | `VSD`,`VSDX`,`VSDM`,`VDW`, `VDX`, `VSDX`, `VSS`,`VSSX`,`VSSM`,`VST`,`VSTX`, `VSX`, `VTX`,`VSTM`                                    |
 | Microsoft Project           | `MPP`, `MPT`,`MPX`                                                                                                                 |
 | Help files                  | `CHM`                                                                                                                              | 
-| Email formats               | `EML`, `EMLX`, `MSG`, `NSF`, `MBOX`, `PST`,`OST`, 'VCF'                                                                                   |
+| Email formats               | `EML`, `EMLX`, `MSG`, `NSF`, `MBOX`, `PST`,`OST`, `VCF`                                                                                   |
 | OpenDocument Formats        | `ODT`, `ODP`,`FODP`, `ODS`,`FODS`, `OTT`,`OTS`,`ODG`,`FODG`,`OTG`,`OTP`,`SXC`                                                      |
-| Plain Text File             | `TXT`,`TSV`,                                                                                                                       |
+| Plain Text File             | `TXT`,`TSV`                                                                                                                       |
 | Comma-Separated Values      | `CSV`                                                                                                                              |
 | HyperText Markup Language   | `HTML`, `MHT`, `MHTML`, `SVG`,`SVGZ`                                                                                               |
 | Extensible Markup Language  | `XML`,`XML`, `XPS`                                                                                                                 |
@@ -41,7 +41,7 @@ In order to demonstrate GroupDocs.Viewer for .NET reach and powerful features we
 | Electronic publication      | `EPUB`,`MOBI`,`DJVU`                                                                                                                       |
 | Windows Icon                | `ICO`                                                                                                                              |
 | Medical image files         | `DCM`
-| Programming Language Formats | `AS`, `AS3`, `ASM`, `BAT`, `C`, `CC`, `CMAKE`, `CPP`, `CS`,`VB`, `CSS`, `CXX`, `DIFF`, `ERB`, `GROOVY`, `H`, `HAML`, `HH`, `JAVA`, `JS`, `JSON`, `LESS`, `LOG`, `M`, `MAKE`, `MD`, `ML`, `MM`, `PHP`, `PL`, `PROPERTIES`, `PY`, `RB`, `RST`, `SASS`, `SCALA`, `SCM`, `SCRIPT`, `SH`, `SML`, `SQL`, `VIM`, `YAML`                                                                                                          
+| Programming Language Formats | `AS`, `AS3`, `ASM`, `BAT`, `C`, `CC`, `CMAKE`, `CPP`, `CS`,`VB`, `CSS`, `CXX`, `DIFF`, `ERB`, `GROOVY`, `H`, `HAML`, `HH`, `JAVA`, `JS`, `JSON`, `LESS`, `LOG`, `M`, `MAKE`, `MD`, `ML`, `MM`, `PHP`, `PL`, `PROPERTIES`, `PY`, `RB`, `RST`, `SASS`, `SCALA`, `SCM`, `SCRIPT`, `SH`, `SML`, `SQL`, `VIM`, `YAML`         
 
 ## Demo Video
 
