@@ -16,6 +16,8 @@ namespace GroupDocs.Viewer.Forms.UI
         private string CurrentFilePath { get; set; }
         private Results.ViewInfo ViewInfo { get; set; }
 
+        private MemoryPageStreamFactory MemoryPageStreamFactory { get; set; }
+
         private GroupDocs.Viewer.Viewer Viewer { get; set; }
 
         private int CurrentPage { get; set; } = 1;
@@ -30,6 +32,7 @@ namespace GroupDocs.Viewer.Forms.UI
 
             // Set title.
             Text = GeneralTitle;
+            MemoryPageStreamFactory = new MemoryPageStreamFactory();
         }
 
         /// <summary>
@@ -88,7 +91,7 @@ namespace GroupDocs.Viewer.Forms.UI
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.InitialDirectory = "c:\\examples";
+                openFileDialog.InitialDirectory = "c:\\";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -125,8 +128,8 @@ namespace GroupDocs.Viewer.Forms.UI
                         }
                         catch (PasswordRequiredException)
                         {
-                        // Ask for password
-                        EnterPasswordBox enterPasswordbox = new EnterPasswordBox();
+                            // Ask for password
+                            EnterPasswordBox enterPasswordbox = new EnterPasswordBox();
                             DialogResult res = enterPasswordbox.ShowDialog();
 
                             if (res == DialogResult.OK)
@@ -174,11 +177,11 @@ namespace GroupDocs.Viewer.Forms.UI
         {
             if (ViewInfo != null)
             {
-                HtmlViewOptions htmlViewOptions = HtmlViewOptions.ForEmbeddedResources("temp.html");
+                HtmlViewOptions htmlViewOptions = HtmlViewOptions.ForEmbeddedResources(MemoryPageStreamFactory);
                 viewer.View(htmlViewOptions, page);
 
-                string curDir = Directory.GetCurrentDirectory();
-                this.webBrowerMain.Url = new Uri(String.Format("file:///{0}/temp.html", curDir));
+                MemoryPageStreamFactory.Stream.Position = 0;
+                webBrowerMain.DocumentStream = MemoryPageStreamFactory.Stream;
             }
 
             UpdateControlsVisibility();
