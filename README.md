@@ -5,6 +5,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ce8rk88mwysa4mkr/branch/main?svg=true)](https://ci.appveyor.com/project/mikhail-evgrafov/groupdocs-viewer-for-net-winforms/branch/main)
 [![GitHub license](https://img.shields.io/github/license/groupdocs-viewer/GroupDocs.Viewer-for-.NET-WebForms.svg)](https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET-WebForms/blob/master/LICENSE)
 
+:warning: **This repository has moved to https://github.com/groupdocs-viewer/GroupDocs.Viewer-for-.NET/tree/master/Demos/WebForms**
+
 ## System Requirements
 - .NET Framework 4.6.1
 - Visual Studio 2019
